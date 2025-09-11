@@ -6,11 +6,11 @@ const ProfilePicture = () => {
   return (
     <div className='profile-pic'>
       <p  style={{textAlign:"center"}}>Profile Picture</p>
-      <hr />
+      <hr className="h-line"/>
       <picture>
         <img src="/uk.png" alt="Logo" />
       </picture>
-      <div className='post-city'>
+      <div className='logo-seen'>
         <button>Edit Original<IoCloudUpload/></button>
         <button>Upload New<IoCloudUpload/></button>
       </div>

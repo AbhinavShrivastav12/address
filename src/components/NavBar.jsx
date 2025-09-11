@@ -10,19 +10,19 @@ const NavBar = () => {
         <div className="left-section">
           <button className="nav-svg business">
             <span>Business Details</span>
-            <FaSearch  style={{marginTop: "3px"}}/>
+            <FaSearch  className="icons"/>
           </button>
           <button className="nav-svg">
             <span>Settings</span>
-            <IoSettings style={{marginTop: "3px"}}/>
+            <IoSettings className="icons"/>
           </button>
           <button className="nav-svg">
             <span>Standard texts</span>
-            <FaList style={{marginTop: "3px"}}/>
+            <FaList className="icons"/>
           </button>
           <button className="nav-svg">
             <span>Go to invoices</span>
-            <IoDocumentText style={{marginTop: "3px"}}/>
+            <IoDocumentText className="icons"/>
           </button>
         </div>
         <div className="right-section">
