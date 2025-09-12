@@ -1,7 +1,14 @@
-import React from "react";
+// import React, { useState } from "react";
 import "../index.css";
 
 const AddressForm = () => {
+  // const [state , setState] = useState();
+  // const [loading , isLoading] = useState(true);
+  // const [error, setError] = useState(null);
+  // const [editLabel, setEditLabel] = useState({})
+
+  const API_URL = import.meta.env.VITE_API_URL;
+
   return (
     <form method="POST">
      <div className="form-data">

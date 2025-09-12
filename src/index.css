@@ -22,7 +22,7 @@ nav {
 
 
 .main-nav {
-  padding: 10px;
+  padding: 10px 0;
   display: flex;
   justify-content: space-between;
 }
@@ -44,6 +44,15 @@ nav {
   height: 15px;
 }
 
+.nav-svg span{
+  font-size: 13px;
+}
+
+.left-section .nav-svg.active{
+  border-color: #87aae6;
+  border: 1px solid #87aae6;
+   box-shadow: 1px 1px 5px 2px rgb(196, 210, 253);
+}
 
 .left-section {
   display: flex;
@@ -55,9 +64,12 @@ nav {
   border: 1px solid #ccc;
   border-radius: 20px;
   text-align: center;
+  border: none;
   background: white;
   font-size: 14px;
-  padding: 8px 20px;
+  padding-left:10px;
+  padding-right: 10px;
+   box-shadow: 1px 1px 5px 1px rgb(226, 226, 227);
 }
 
 
@@ -151,7 +163,7 @@ nav {
 .post-city {
   display: flex;
   width: 100%;
-  gap: 15px;
+  gap: 25px;
 }
 
 .post-city .form-input {
@@ -172,7 +184,6 @@ nav {
 }
 
 .post-city .form-input:last-child input {
-  /* This targets only the city input field */
   margin-left: -5px; /* Additional adjustment for the input itself */
 }
 
@@ -216,7 +227,7 @@ nav {
 
 /* Consistent button styling */
 .logo-seen button {
-  border: 1px solid #c9d4e0;
+  border: none;
   border-radius: 20px;
   background: white;
   font-size: 14px;
@@ -230,6 +241,7 @@ nav {
   min-width: 140px;
   width: 100%;
   box-sizing: border-box;
+     box-shadow: 1px 1px 5px 1px rgb(226, 226, 227);
 }
 
 /* Yes/No button container */
@@ -250,17 +262,13 @@ nav {
   padding: 8px 0;
   height: 35px;
   min-width: 60px;
-  cursor: pointer;
-  text-align: center;
-  transition: all 0.2s ease;
 }
 
 /* Active state for Yes/No buttons */
 .yes-no.active {
-  background-color: #e6f0ff;
-  border-color: #87aae6;
-  color: #3a6bc8;
-  font-weight: 600;
+border-color: #87aae6;
+  border: 1px solid #87aae6;
+   box-shadow: 1px 1px 5px 2px rgb(196, 210, 253);
 }
 
 /* Profile Section */

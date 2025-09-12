@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaList, FaSearch } from "react-icons/fa";
 import { IoDocumentText, IoSettings } from "react-icons/io5";
 
 const NavBar = () => {
+  const [useNav, setUseNav] = useState(true);
+
   return (
     <nav>
       <div className="main-nav">
         <div className="left-section">
-          <button className="nav-svg business">
+          <button className={`nav-svg ${useNav ? 'active' : ''}`} onClick={() => setUseNav(true)}>
             <span>Business Details</span>
             <FaSearch className="icons" />
           </button>
