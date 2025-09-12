@@ -99,6 +99,13 @@ nav {
 
 .icons{
   margin-top: 3px;
+  width: 18px;
+  height: 16px;
+}
+
+.logo-seen .icons{
+  margin: 0;
+  flex-shrink: 0 ;
 }
 
 .nav-svg {
@@ -224,6 +231,7 @@ nav {
    display: block; 
   margin: 0 auto;   
 }
+
 .our-logo img {
   width: 120px;
   height: auto;
@@ -235,23 +243,39 @@ nav {
 .logo-container {
   display: flex;
   flex-direction: column;
+  gap: 16px;
+  margin-top: 15px;
 }
 
-.logo-seen{
-  display: flex;
-  justify-content: space-evenly;
-  
+.logo-seen {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  align-items: center;
+  gap: 10px;
 }
 
 .logo-seen button {
  border: 1px solid #c9d4e0;
   border-radius: 20px;
-  text-align: center;
-  position: relative;
   background: white;
   font-size: 14px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   color: #8c8989;
-  padding: 1px 20px;
+  gap: 15px;
+  white-space: nowrap;
+  padding: 0px 14px;
+}
+
+.logo-seen .post-city{
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.logo-seen p{
+  margin: 0;
 }
 
  .profile-pic{
@@ -269,6 +293,15 @@ nav {
   height: 75px;
   border-radius: 50%;
   object-fit: cover;    
-   display: block;         
-  margin: 0 auto;   
+  display: block;         
+  margin: 0 auto;
+  padding: 10px;   
  }
+.yes-no {
+  min-width: 80px;     
+  text-align: center;
+  display: flex;
+  justify-content: center; 
+}
+
+

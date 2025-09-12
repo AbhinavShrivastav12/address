@@ -6,7 +6,7 @@ import { FaSearchPlus } from "react-icons/fa";
 const OurLogo = () => {
   return (
     <div className="our-logo">
-      <p style={{ textAlign: "center" }}>Our Logo</p>
+      <p style={{ textAlign: "center", paddingBottom:"10px" }}>Our Logo</p>
       <hr className="h-line"/>
       <picture>
         <img src="/uk.png" alt="Logo" />
@@ -15,8 +15,8 @@ const OurLogo = () => {
         <div className="logo-seen">
           <p>Use Logo</p>
           <div className="post-city">
-            <button>Yes</button>
-            <button>No</button>
+            <button className="yes-no">Yes</button>
+            <button className="yes-no">No</button>
           </div>
         </div>
         <div className="logo-seen">
@@ -30,7 +30,7 @@ const OurLogo = () => {
           <p>Preview Logo</p>
           <button>
             <span>Preview</span>
-            <FaSearchPlus style={{marginTop: "3px"}}/>
+            <FaSearchPlus className="icons" style={{margin:"0 30px"}}/>
           </button>
         </div>
       </div>
