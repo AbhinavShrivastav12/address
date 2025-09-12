@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "../index.css";
 import { IoCloudUpload } from "react-icons/io5";
 import { FaSearchPlus } from "react-icons/fa";
 
 const OurLogo = () => {
+  const [useLogo, setUseLogo] = useState(true);
+
   return (
     <div className="our-logo">
-      <p style={{ textAlign: "center", paddingBottom:"10px" }}>Our Logo</p>
-      <hr className="h-line"/>
+      <p style={{ textAlign: "center", paddingBottom: "10px", fontWeight: "600", color: "#333" }}>Our Logo</p>
+      <hr className="h-line" />
       <picture>
         <img src="/uk.png" alt="Logo" />
       </picture>
@@ -15,22 +17,32 @@ const OurLogo = () => {
         <div className="logo-seen">
           <p>Use Logo</p>
           <div className="post-city">
-            <button className="yes-no">Yes</button>
-            <button className="yes-no">No</button>
+            <button 
+              className={`yes-no ${useLogo ? 'active' : ''}`}
+              onClick={() => setUseLogo(true)}
+            >
+              Yes
+            </button>
+            <button 
+              className={`yes-no ${!useLogo ? 'active' : ''}`}
+              onClick={() => setUseLogo(false)}
+            >
+              No
+            </button>
           </div>
         </div>
         <div className="logo-seen">
           <p>Choose Logo</p>
           <button>
             <span>Upload New</span>
-            <IoCloudUpload className="icons"/>
+            <IoCloudUpload className="icons" />
           </button>
         </div>
         <div className="logo-seen">
           <p>Preview Logo</p>
           <button>
             <span>Preview</span>
-            <FaSearchPlus className="icons" style={{margin:"0 30px"}}/>
+            <FaSearchPlus className="icons" />
           </button>
         </div>
       </div>
