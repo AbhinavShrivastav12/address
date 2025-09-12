@@ -10,7 +10,7 @@ const ProfilePicture = () => {
       <picture>
         <img src="/uk.png" alt="Logo" />
       </picture>
-      <div className='logo-seen'>
+      <div className='profile'>
         <button><span>Edit Original</span><IoCloudUpload className='icons'/></button>
         <button><span>Upload New</span><IoCloudUpload className='icons'/></button>
       </div>

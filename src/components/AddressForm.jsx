@@ -7,7 +7,7 @@ const AddressForm = () => {
      <div className="form-data">
       <p>Your business details. To update them-just change them.</p>
      <div className="form-input">  <label htmlFor="">Name</label>
-       <input type="text" placeholder="Enter the name" /></div>
+       <input type="text" placeholder="Enter the namme" /></div>
       <div className="form-input">
         <label htmlFor="">Address</label>
       <input type="text"  placeholder="Enter your address"/>
@@ -23,7 +23,7 @@ const AddressForm = () => {
       </div>
       <div className="form-input">
           <label htmlFor="">City</label>
-        <input type="text" placeholder="Enter your city"/>
+        <input type="text" placeholder="Enter your city" style={{marginLeft: "-55px"}}/>
       </div>
       </div>
     <div className="form-input">
