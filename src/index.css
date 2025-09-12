@@ -12,25 +12,25 @@ body {
   overflow-x: hidden;
 }
 
-/* Navigation Styles */
+/* Navigation Styles - FIXED */
 nav {
   background: white;
   box-shadow: 0 10px 40px 1px #c4d2fd;
+  position: relative;
+  width: 100%;
 }
 
+
 .main-nav {
-  margin-top: 8px;
-  margin-bottom: 8px;
+  padding: 10px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
 }
 
 .icons {
-  margin-top: 3px;
-  width: 18px;
+  width: 16px;
   height: 16px;
+  flex-shrink: 0;
 }
 
 .nav-svg {
@@ -44,9 +44,11 @@ nav {
   height: 15px;
 }
 
+
 .left-section {
   display: flex;
   gap: 20px;
+  margin-inline-start: auto;
 }
 
 .left-section .nav-svg {
@@ -55,15 +57,23 @@ nav {
   text-align: center;
   background: white;
   font-size: 14px;
-  padding: 2px 20px;
+  padding: 8px 20px;
 }
+
 
 .right-section {
   display: flex;
-  align-items: center;
+  margin-left: auto;
   padding-top: 5px;
   padding-right: 10px;
   font-size: 14px;
+}
+
+.right-section .nav-svg {
+  margin-right: 20px;
+  padding: 8px 15px;
+  background: white;
+  white-space: nowrap;
 }
 
 .h-line {
@@ -134,9 +144,10 @@ nav {
   padding: 8px 15px;
   outline: none;
   font-size: 13px;
+  max-width: 600px;
 }
 
-/* Postcode and City row - FIXED spacing */
+/* Postcode and City row */
 .post-city {
   display: flex;
   width: 100%;
@@ -149,13 +160,20 @@ nav {
   flex: 1;
 }
 
-/* Make city input closer to its label */
+/* SPECIFIC FIX FOR CITY INPUT ONLY */
 .post-city .form-input:last-child {
-  gap: 5px; /* Reduced gap between label and input */
+  /* This targets only the city input container */
+  margin-left: -15px; /* Pulls the city input closer to its label */
 }
 
 .post-city .form-input:last-child > label {
-  padding-right: 5px; /* Reduced padding for city label */
+  /* This targets only the city label */
+  padding-right: 5px; /* Reduced padding specifically for city label */
+}
+
+.post-city .form-input:last-child input {
+  /* This targets only the city input field */
+  margin-left: -5px; /* Additional adjustment for the input itself */
 }
 
 .form-input input:focus {
@@ -212,7 +230,6 @@ nav {
   min-width: 140px;
   width: 100%;
   box-sizing: border-box;
-    box-shadow: 0 0 10px 2px rgba(174, 178, 183, 0.25);
 }
 
 /* Yes/No button container */
@@ -240,23 +257,10 @@ nav {
 
 /* Active state for Yes/No buttons */
 .yes-no.active {
+  background-color: #e6f0ff;
   border-color: #87aae6;
+  color: #3a6bc8;
   font-weight: 600;
-    box-shadow: 0 0 10px 2px rgba(0, 123, 255, 0.25);
-}
-
-/* Icon styling */
-.icons {
-  width: 16px;
-  height: 16px;
-  flex-shrink: 0;
-}
-
-.logo-seen p {
-  margin: 0;
-  text-align: left;
-  font-weight: 500;
-  color: #555;
 }
 
 /* Profile Section */
@@ -298,10 +302,7 @@ nav {
   min-width: 140px;
   width: 100%;
   box-sizing: border-box;
-   box-shadow: 0 0 10px 2px rgba(174, 178, 183, 0.25);
 }
-
-
 
 /* Media queries for responsiveness */
 @media screen and (max-width: 1023px) {
@@ -312,11 +313,15 @@ nav {
   }
   
   .left-section {
-    gap: 5px;
+    gap: 8px;
   }
 
   .nav-svg span {
     display: none;
+  }
+  
+  .right-section .nav-svg span {
+    display: inline; 
   }
 
   .form-data {
@@ -341,13 +346,17 @@ nav {
     gap: 5px;
   }
   
-  /* Reset for mobile */
+  /* Reset for mobile - remove city-specific adjustments */
   .post-city .form-input:last-child {
-    gap: 5px;
+    margin-left: 0;
   }
   
   .post-city .form-input:last-child > label {
     padding-right: 0;
+  }
+  
+  .post-city .form-input:last-child input {
+    margin-left: 0;
   }
 
   .line {
@@ -399,42 +408,64 @@ nav {
   }
 }
 
-@media screen and (max-width: 480px) {
-
+@media screen and (max-width: 768px) {
   .main-nav {
-    gap: 10px;
-    padding: 10px;
+    flex-direction: row; /* Keep it as row */
+    height: 50px;
+    padding: 0 15px;
   }
   
   .left-section {
-    justify-content: center;
+    width: auto;
+    margin-bottom: 0;
+    gap: 10px;
+  }
+  
+  .left-section .nav-svg {
+    padding: 8px 15px;
+    font-size: 13px;
   }
   
   .right-section {
-    justify-content: center;
-    padding: 0;
+    margin-left: auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .main-nav {
+    padding: 0 10px;
+  }
+  
+  .left-section {
+    gap: 5px;
+  }
+  
+  .left-section .nav-svg {
+    padding: 6px 10px;
+  }
+  
+  .right-section .nav-svg {
+    padding: 6px 10px;
   }
   
   .form-data {
     padding: 15px;
   }
-
-  .post-city{
-    display: flex;
-    flex-direction: column;
+  
+  /* Additional mobile fixes for Yes/No buttons */
+  .yes-no {
+    min-width: 60px;
+    padding: 5px 10px;
   }
   
-  .logo-seen p {
-    font-size: 14px;
+  .logo-seen button {
+    width: 100%;
+    max-width: 200px;
+    padding: 8px 12px;
   }
   
   .logo-seen .post-city {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .profile {
-    display: flex;
-    flex-direction: column;
+    width: 100%;
+    max-width: 200px;
   }
 }
