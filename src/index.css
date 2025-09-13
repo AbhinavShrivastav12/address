@@ -24,6 +24,7 @@ nav {
 .main-nav {
   padding: 10px 0;
   display: flex;
+  width: 100%;
   justify-content: space-between;
 }
 
@@ -89,7 +90,7 @@ nav {
 }
 
 .h-line {
-  background: #c8c5c5;
+  background:  #c9d4e0;
   height: 1px;
   width: 100%;
 }
@@ -104,7 +105,7 @@ nav {
 
 .line {
   width: 2px;
-  background: #ccc;
+  background:  #c9d4e0;
   min-height: 100%;
 }
 
@@ -166,25 +167,24 @@ nav {
   gap: 25px;
 }
 
+.city {
+  margin-left:-55px;
+}
+
 .post-city .form-input {
   display: flex;
   align-items: center;
   flex: 1;
 }
-
-/* SPECIFIC FIX FOR CITY INPUT ONLY */
-.post-city .form-input:last-child {
-  /* This targets only the city input container */
-  margin-left: -15px; /* Pulls the city input closer to its label */
-}
-
-.post-city .form-input:last-child > label {
-  /* This targets only the city label */
-  padding-right: 5px; /* Reduced padding specifically for city label */
-}
-
-.post-city .form-input:last-child input {
-  margin-left: -5px; /* Additional adjustment for the input itself */
+/* Restrict width for bottom inputs */
+.form-input input[name="our_reference"],
+.form-input input[name="phone"],
+.form-input input[name="email"],
+.form-input input[name="acc_number"],
+.form-input input[name="org_number"],
+.form-input input[name="homepage"] {
+  max-width: 400px;
+  width: 100%;
 }
 
 .form-input input:focus {
@@ -312,6 +312,8 @@ border-color: #87aae6;
   box-sizing: border-box;
 }
 
+
+
 /* Media queries for responsiveness */
 @media screen and (max-width: 1023px) {
   .main-page {
@@ -319,9 +321,11 @@ border-color: #87aae6;
     margin: 20px;
     gap: 20px;
   }
-  
   .left-section {
-    gap: 8px;
+   display: flex !important;
+   flex-direction: row;
+   gap: 50px;
+   justify-content: space-around !important;
   }
 
   .nav-svg span {
@@ -418,22 +422,17 @@ border-color: #87aae6;
 
 @media screen and (max-width: 768px) {
   .main-nav {
-    flex-direction: row; /* Keep it as row */
-    height: 50px;
-    padding: 0 15px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
   }
-  
   .left-section {
-    width: auto;
-    margin-bottom: 0;
-    gap: 10px;
+   display: flex !important;
+   flex-direction: row;
+   gap: 50px;
+   justify-content: space-around !important;
   }
-  
-  .left-section .nav-svg {
-    padding: 8px 15px;
-    font-size: 13px;
-  }
-  
+
   .right-section {
     margin-left: auto;
   }
@@ -441,39 +440,41 @@ border-color: #87aae6;
 
 @media screen and (max-width: 480px) {
   .main-nav {
-    padding: 0 10px;
+    padding: 10px;
+  }
+
+   .left-section {
+   display: flex !important;
+   flex-direction: row;
+   gap: 20px;
+   justify-content: space-around !important;
   }
   
-  .left-section {
-    gap: 5px;
+
+   .right-section {
+    margin-left: 25px !important;
   }
-  
-  .left-section .nav-svg {
-    padding: 6px 10px;
+
+  .nav-svg.language span {
+    display: none;
   }
-  
-  .right-section .nav-svg {
-    padding: 6px 10px;
-  }
-  
   .form-data {
     padding: 15px;
   }
-  
-  /* Additional mobile fixes for Yes/No buttons */
-  .yes-no {
-    min-width: 60px;
-    padding: 5px 10px;
+
+  .our-logo  p {
+    font-size: 14px;
+  }
+
+  .profile-pic p {
+
+    font-size: 14px;
+  }
+
+  .profile {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
   
-  .logo-seen button {
-    width: 100%;
-    max-width: 200px;
-    padding: 8px 12px;
-  }
-  
-  .logo-seen .post-city {
-    width: 100%;
-    max-width: 200px;
-  }
 }

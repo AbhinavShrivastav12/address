@@ -117,7 +117,7 @@ const AddressForm = () => {
               placeholder="Enter your city"
               value={state.city || ""}
               onChange={handleChange}
-              style={{ marginLeft: "-55px" }}
+              className="city"
             />
           </div>
         </div>
