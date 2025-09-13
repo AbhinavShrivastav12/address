@@ -260,7 +260,6 @@ nav {
   font-size: 14px;
   color: #8c8989;
   padding: 8px 0;
-  height: 35px;
   min-width: 60px;
 }
 
@@ -290,6 +289,7 @@ border-color: #87aae6;
   margin: 0 auto;
   padding: 10px;
 }
+
 .profile{
   display: flex;
   gap: 20px;
@@ -461,6 +461,11 @@ border-color: #87aae6;
   .form-data {
     padding: 15px;
   }
+
+  .form-input {
+  align-items: flex-start !important;
+}
+
 
   .our-logo  p {
     font-size: 14px;
