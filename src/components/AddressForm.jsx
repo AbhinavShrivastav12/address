@@ -27,7 +27,7 @@ const AddressForm = () => {
         const res = await fetch(`${API_URL}/address`);
         if (!res.ok) throw new Error("Failed to fetch addresses");
         const data = await res.json();
-        setState(data || {}); // assume backend returns an object
+        setState(data || {}); 
       } catch (err) {
         console.error(err);
         setError(err.message);
