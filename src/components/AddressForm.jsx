@@ -99,7 +99,7 @@ const AddressForm = () => {
         </div>
 
         <div className="post-city">
-          <div className="form-input">
+          <div className="form-input mobile">
             <label htmlFor="postcode">Postcode</label>
             <input
               name="postcode"
